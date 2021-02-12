@@ -1,12 +1,22 @@
 import React from 'react';
-import SearchBar from "./SearchBar";
 import 'semantic-ui-react'
+import axios from "axios";
+import config from "../config";
+import SearchBar from "./SearchBar";
 
+
+const accessKey = config.access_key;
 
 class App extends React.Component {
     onSearchSubmit(term){
+    axios.get('https://api.unsplash.com/search/photos',{
+        params: {query: term },
+        headers: {
+           Authorization:
+               'Client-ID ' + accessKey
+        }
+    });
 
-        console.log(term)
 
     }
 
