@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchBar from "./SearchBar";
+import 'semantic-ui-react'
 
 
 class App extends React.Component {
